@@ -2,13 +2,7 @@
 if (!isset($_SESSION))
 {
   session_start();
-  // echo $_SESSION;
-// echo '<script type="text/javascript">alert("Login first");window.location=\'index.php\';</script>';
 
-
-}
-else{
-  session_start();
 }
 ?>    
 <title>JOB PORTAL</title>
@@ -81,6 +75,7 @@ include "menu.php"
                 <h2><span><a href="#">Welcome <?php echo $_SESSION['Name'];?></a></span></h2>
                <?php
 $ID=$_SESSION['ID'];
+// echo $ID;
 // Establish Connection with Database
 $con = mysqli_connect("localhost","root","","job");
 
@@ -91,9 +86,9 @@ $result = mysqli_query($con,$sql);
 // Loop through each records
 $row = mysqli_fetch_array($result)
 ?>
-<form method="post" action="UpdateProfile.php">
+<form method="get" action="updatePass.php">
                 <table width="100%" border="1" cellspacing="2" cellpadding="2">
-                  <tr>
+                <tr>
                     <td><strong>Company ID:</strong></td>
                     <td><span id="sprytextfield1">
                       <label>
@@ -101,63 +96,7 @@ $row = mysqli_fetch_array($result)
                       </label>
                     <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>
-                  <tr>
-                    <td><strong>Company Name:</strong></td>
-                    <td><span id="sprytextfield2">
-                      <label>
-                      <input name="txtName" type="text" id="txtName" value="<?php echo $row['CompanyName'];?>" />
-                      </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Contact Person:</strong></td>
-                    <td><span id="sprytextfield3">
-                      <label>
-                      <input name="txtContact" type="text" id="txtContact" value="<?php echo $row['ContactPerson'];?>" />
-                      </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Address:</strong></td>
-                    <td><span id="sprytextarea1">
-                      <label>
-                      <textarea name="txtAddress" id="txtAddress" cols="35" rows="3"><?php echo $row['Address'];?></textarea>
-                      </label>
-                    <span class="textareaRequiredMsg">A value is required.</span></span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>City:</strong></td>
-                    <td><span id="sprytextfield4">
-                      <label>
-                      <input name="txtCity" type="text" id="txtCity" value="<?php echo $row['City'];?>" />
-                      </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Email:</strong></td>
-                    <td><span id="sprytextfield5">
-                      <label>
-                      <input name="txtEmail" type="text" id="txtEmail" value="<?php echo $row['Email'];?>" />
-                      </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Mobile:</strong></td>
-                    <td><span id="sprytextfield6">
-                      <label>
-                      <input name="txtMobile" type="text" id="txtMobile" value="<?php echo $row['Mobile'];?>" />
-                      </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Area of Work:</strong></td>
-                    <td><span id="sprytextfield7">
-                      <label>
-                      <input name="txtArea" type="text" id="txtArea" value="<?php echo $row['Area_Work'];?>" />
-                      </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
-                  </tr>
-                  <tr>
+                <tr>
                     <td><strong>User Name:</strong></td>
                     <td><span id="sprytextfield8">
                       <label>

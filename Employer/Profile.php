@@ -124,6 +124,10 @@ $row = mysqli_fetch_array($result)
                     <td>&nbsp;</td>
                     <td><a href="EditProfile.php?EmployerId=<?php echo $row['EmployerId']; ?>">Edit Profile</a></td>
                   </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td><a href="resetPass.php?EmployerId=<?php echo $row['EmployerId']; ?>">Edit Password</a></td>
+                  </tr>
                 </table>
                 <?php
                 mysqli_close($con);
