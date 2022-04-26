@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['$UserName_job'])){
+if(isset($_SESSION['$UserName_freelancer'])){
 }
 	else{
 		header('location:../index.php');

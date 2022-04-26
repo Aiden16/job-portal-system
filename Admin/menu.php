@@ -7,6 +7,7 @@
                 <li><a href="User.php">User<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="ManageJob.php">Manage JobSeeker<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="ManageEmployer.php">Manage Employer<span class="tab-l"></span><span class="tab-r"></span></a></li>
+                <li><a href="ManageFreelancer.php">Manage Freelancer<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="Feedback.php">Feedback<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="session_destroy.php">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>

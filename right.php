@@ -45,6 +45,8 @@
                           <option value="JobSeeker">JobSeeker</option>
                           <option value="Employer" selected="selected">Employer</option>
                           <option value="Administrator">Administrator</option>
+                          <option value="Freelancer">Freelancer</option>
+
                           </select>
                       </label></td>
                     </tr>

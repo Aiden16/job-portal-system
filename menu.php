@@ -6,6 +6,8 @@
                 <li><a href="index.php">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="Employer.php">Employer<span class="tab-l"></span><span class="tab-r"></span></a></li>
                  <li><a href="JobSeeker.php">Job Seeker<span class="tab-l"></span><span class="tab-r"></span></a></li>
+                 <li><a href="Freelancer.php">Freelancer<span class="tab-l"></span><span class="tab-r"></span></a></li>
+
 
             </ul>
 

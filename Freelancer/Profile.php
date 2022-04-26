@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['$UserName_job'])){
+if(isset($_SESSION['$UserName_freelancer'])){
 }
 	else{
 		header('location:../index.php');
@@ -78,7 +78,7 @@ $ID=$_SESSION['ID'];
 // Establish Connection with Database
 $con = mysqli_connect("localhost","root","","job");
 // Specify the query to execute
-$sql = "select * from JobSeeker_Reg where JobSeekId='".$ID."'  ";
+$sql = "select * from freelancer_Reg where freelancerId='".$ID."'  ";
 
 // Execute query for jobseeker
 $result = mysqli_query($con,$sql);
@@ -91,21 +91,23 @@ $row = mysqli_fetch_array($result)
                 <table width="100%" border="1" cellspacing="2" cellpadding="2">
                   <tr>
                     <td><strong>Name:</strong></td>
-                    <td><?php echo $row['JobSeekerName'];?></td>
+                    <td><?php echo $row['freelancerName'];?></td>
                   </tr>
                   <tr>
                     <td><strong>Highest Qualification:</strong></td>
                     <td><?php echo $row['Qualification'];?></td>
                   </tr>
-
+                  <tr>
+                    <td><strong>Skills:</strong></td>
+                    <td><?php echo $row['Skills'];?></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Contact:</strong></td>
+                    <td><?php echo $row['Contact'];?></td>
+                  </tr>
                   <tr>
                     <td><strong>Resume:</strong></td>
                     <td><a href="../upload/<?php echo $row['Resume'];?>" target="_blank"><strong>View</strong></a></td>
-                  </tr>
-									<tr>
-                    <td><strong>View personal information:</strong></td>
-                    <td><a href="personalinfoshow.php?id=<?php echo $ID;?>" target="_blank"><strong>View</strong></a></td>
-
                   </tr>
                   <tr>
                     <td>&nbsp;</td>

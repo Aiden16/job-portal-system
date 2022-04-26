@@ -111,19 +111,6 @@ $row = mysqli_fetch_array($result)
                 </table>
                     </td>
                   </tr>
-                  <tr>
-                    <td bgcolor="#A0B9F3"><strong>Educational Qualification</strong></td>
-                  </tr>
-                  <tr>
-                    <td><table width="100%" border="1" cellpadding="1" cellspacing="2" bordercolor="#006699" >
-                      <tr>
-                        <th height="32" bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Degree</strong></div></th>
-                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>University</strong></div></th>
-                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>HighSchool</strong></div></th>
-                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Percentage in HighSchool</strong></div></th>
-                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>CGPA in University</strong></div></th>
-
-                      </tr>
                       <?php
 					  $ID=$_GET['JobSeekId'];
 // Establish Connection with Database

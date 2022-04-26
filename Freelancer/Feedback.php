@@ -5,9 +5,8 @@ if(isset($_SESSION['$UserName_job'])){
 	else{
 		header('location:../index.php');
 	}
-?>
-
-    <title>JOB PORTAL</title>
+?>    
+<title>JOB PORTAL</title>
     <meta name="description" content="..." />
     <meta name="keywords" content="..." />
 
@@ -23,6 +22,8 @@ if(isset($_SESSION['$UserName_job'])){
 }
 -->
     </style>
+    <script src="../SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
+    <link href="../SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body id="www-url-cz">
@@ -44,7 +45,7 @@ include "menu.php"
             <hr class="noscreen" />
 
             <!-- Breadcrumbs -->
-            <p id="breadcrumbs">&nbsp;</p>
+            <p id="breadcrumbs">You are here: <a href="index.php">Home</a></p>
           <hr class="noscreen" />
 
         </div> <!-- /strip -->
@@ -70,56 +71,39 @@ include "menu.php"
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">Welcome <?php echo $_SESSION['Name'];?></a></span></h2>
-
-<?php
-
-$ID=$_SESSION['ID'];
-// Establish Connection with Database
-$con = mysqli_connect("localhost","root","","job");
-// Specify the query to execute
-$sql = "select * from JobSeeker_Reg where JobSeekId='".$ID."'  ";
-
-// Execute query for jobseeker
-$result = mysqli_query($con,$sql);
-// Loop through each records for jobseekr
-$row = mysqli_fetch_array($result)
+                <h2><span><a href="#">Feedback </a></span></h2>
 
 
-
-?>
-                <table width="100%" border="1" cellspacing="2" cellpadding="2">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td><strong>Name:</strong></td>
-                    <td><?php echo $row['JobSeekerName'];?></td>
+                    <td bgcolor="#A0B9F3"><strong>Give Your Feedback</strong></td>
                   </tr>
                   <tr>
-                    <td><strong>Highest Qualification:</strong></td>
-                    <td><?php echo $row['Qualification'];?></td>
-                  </tr>
-
-                  <tr>
-                    <td><strong>Resume:</strong></td>
-                    <td><a href="../upload/<?php echo $row['Resume'];?>" target="_blank"><strong>View</strong></a></td>
-                  </tr>
-									<tr>
-                    <td><strong>View personal information:</strong></td>
-                    <td><a href="personalinfoshow.php?id=<?php echo $ID;?>" target="_blank"><strong>View</strong></a></td>
-
-                  </tr>
-                  <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td><form id="form1" method="post" action="InsertFeedback.php">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td>Feedback:</td>
+                          <td><span id="sprytextarea1">
+                            <label>
+                            <textarea name="txtFeedback" id="txtFeedback" cols="35" rows="5"></textarea>
+                            </label>
+                          <span class="textareaRequiredMsg">A value is required.</span></span></td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td><label>
+                            <input type="submit" name="button" id="button" value="Submit" />
+                          </label></td>
+                        </tr>
+                      </table>
+                                        </form>
+                    </td>
                   </tr>
                 </table>
-              <p>&nbsp;</p>
+                <p>&nbsp;</p>
 
                 <p class="btn-more box noprint">&nbsp;</p>
           </div> <!-- /article -->
-
-            <?php
-            mysqli_close($con);
-            ?>
 
             <hr class="noscreen" />
 
@@ -138,5 +122,10 @@ include "footer.php"
 ?>
 </div> <!-- /main -->
 
+<script type="text/javascript">
+<!--
+var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1");
+//-->
+</script>
 </body>
 </html>
